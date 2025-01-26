@@ -1,0 +1,8 @@
+.image-container {
+  width: 100%; /* Adjust width to your preference */
+  height: 500px; /* Adjust height to your preference */
+  background-image: url("glar.jpg"); /* Replace with the correct path to your image */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+}
