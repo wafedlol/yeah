@@ -20,7 +20,7 @@
             text-align: center;
             padding: 20px;
         }
-        .image-container {
+        #clickable-image {
             background-color: green;
             display: inline-block;
             padding: 20px;
@@ -39,10 +39,48 @@
 <body>
     <h1>glarbin</h1>
     <p>glarbin</p>
+    
+    
     <div class="image-container">
-        <img src="assets/images/glar.jpg" alt="A cool image" />
+        <img id="clickable-image" src="https://i1.sndcdn.com/avatars-5FKJrCOt1EWVLDAm-RclDOg-t1080x1080.jpg" alt="assets/images/glar.jpg" />
+    
+        <audio id="audio-player">
+            <source src="https://glarbin.lol/assets/sounds/meow.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+        </audio>
     </div>
-    <p>click button below vvv</p>
+
+    <script>
+        // JavaScript to play the audio when the image is clicked
+        const image = document.getElementById("clickable-image");
+        const audio = document.getElementById("audio-player");
+    
+        image.addEventListener("click", () => {
+          audio.play(); // Play the audio
+        });
+    </script>
+
+
+
+
+
+    <p>click button below</p>
     <a href="https://soundcloud.com/niamhsc/glarbin-out-w-nahbea-wafelek-cowbla-prod-imprevia" target="_blank">glarbin out</a>
+    
+    
+    <div class="image-container">
+        <img id="fixed-image" src="https://www.glarbin.lol/assets/images/glarbin.png" alt="" />
+    </div>
+
+    <style>
+        #fixed-image {
+            position: fixed;
+            top: 0px;   /* 20px from the top of the viewport */
+            right: 0px;  /* 20px from the left of the viewport */
+            width: 500px; /* Adjust the size as needed */
+        }
+    </style>
+
+    </div>
 </body>
 </html>
