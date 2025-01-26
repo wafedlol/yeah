@@ -42,7 +42,7 @@
     
     
     <div class="image-container">
-        <img id="clickable-image" src="assets/images/glar.jpg" alt="https://i1.sndcdn.com/avatars-5FKJrCOt1EWVLDAm-RclDOg-t1080x1080.jpg" />
+        <img id="clickable-image" src="https://i1.sndcdn.com/avatars-5FKJrCOt1EWVLDAm-RclDOg-t1080x1080.jpg" alt="assets/images/glar.jpg" />
     
         <audio id="audio-player">
             <source src="https://glarbin.lol/assets/sounds/meow.mp3" type="audio/mpeg" />
@@ -69,7 +69,7 @@
     
     
     <div class="image-container">
-        <img id="fixed-image" src="https://www.glarbin.lol/assets/images/glarbin.png" alt="assets/images/glarbin.png" />
+        <img id="fixed-image" src="https://www.glarbin.lol/assets/images/glarbin.png" alt="" />
     </div>
 
     <style>
@@ -82,5 +82,50 @@
     </style>
 
     </div>
+
+    <script>
+        const dvdLogo = document.getElementById("fixed-image");
+        let x = 100, y = 100;
+        let dx = 2, dy = 2;
+        const speed = 1;
+
+        function updatePosition() {
+            const screenWidth = window.innerWidth - dvdLogo.clientWidth;
+            const screenHeight = window.innerHeight - dvdLogo.clientHeight;
+
+            x += dx * speed;
+            y += dy * speed;
+
+            if (x <= 0 || x >= screenWidth) {
+                dx *= -1;
+                changeColor();
+            }
+            if (y <= 0 || y >= screenHeight) {
+                dy *= -1;
+                changeColor();
+            }
+
+            dvdLogo.style.left = x + "px";
+            dvdLogo.style.top = y + "px";
+        }
+
+        function changeColor() {
+            dvdLogo.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
+        }
+
+        function animate() {
+            updatePosition();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+
+
+
+
+
+
+
 </body>
 </html>
